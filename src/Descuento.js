@@ -10,13 +10,11 @@ function Descuento() {
   const [counter, setCounter] = useState(0);
   const [searchParams] = useSearchParams();
 
-  // Cargar el código de descuento desde la URL
   useEffect(() => {
     const discount = searchParams.get('code');
     setDiscountCode(discount);
   }, [searchParams]);
 
-  // Cargar el contador de personas
   useEffect(() => {
     const fetchCounter = async () => {
       const docRef = doc(db, "metrics", "counter");
@@ -40,16 +38,14 @@ function Descuento() {
     const userData = { ...formData, discountCode };
 
     try {
-      // Guarda los datos del usuario en Firestore
       await addDoc(collection(db, "users"), userData);
 
-      // Incrementa el contador
       const docRef = doc(db, "metrics", "counter");
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
         const newCount = docSnap.data().count + 1;
         await setDoc(docRef, { count: newCount });
-        setCounter(newCount); // Actualiza el estado del contador
+        setCounter(newCount);
       }
 
       setSuccess(true);
@@ -59,36 +55,41 @@ function Descuento() {
   };
 
   return (
-    <div className="Descuento">
-      <h1>Regístrate para obtener tu descuento</h1>
-      <p>Tu código de descuento es: {discountCode}</p>
-      <p>Personas registradas: {counter}</p>
-      {success ? (
-        <p>¡Gracias por registrarte! El descuento ha sido registrado.</p>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Ingresa tu nombre"
-            value={formData.name}
-            onChange={handleInputChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Ingresa tu correo"
-            value={formData.email}
-            onChange={handleInputChange}
-            required
-          />
-          <button type="submit">Registrar y obtener descuento</button>
-        </form>
-      )}
+    <div className="descuento-container">
+      <div className="form-card">
+        <h1>Regístrate para obtener tu descuento</h1>
+        <p className="counter">Personas registradas: {counter}</p>
+        
+        {success ? (
+          <div className="success-message">
+            <p>¡Gracias por registrarte! Tu código de descuento es: <strong>{discountCode}</strong></p>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="form">
+            <input
+              type="text"
+              name="name"
+              placeholder="Ingresa tu nombre"
+              value={formData.name}
+              onChange={handleInputChange}
+              required
+              className="input-field"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Ingresa tu correo"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+              className="input-field"
+            />
+            <button type="submit" className="submit-button">Registrar y obtener descuento</button>
+          </form>
+        )}
+      </div>
     </div>
   );
 }
 
 export default Descuento;
-
