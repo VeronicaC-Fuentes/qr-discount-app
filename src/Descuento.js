@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { addDoc, collection, doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from './firebase';
 import { useSearchParams } from 'react-router-dom';
+import './App.css'; // Asegúrate de importar el archivo CSS
 
 function Descuento() {
   const [formData, setFormData] = useState({ name: '', email: '' });

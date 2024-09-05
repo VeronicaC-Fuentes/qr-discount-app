@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import QRCode from 'react-qr-code';
+import './App.css'; // Asegúrate de importar el archivo CSS
 
 function QRPage() {
   const [generatedQR, setGeneratedQR] = useState('');
