@@ -108,3 +108,73 @@ p.counter {
     font-size: 18px;
   }
 }
+
+/* Fondo con degradado y estilo llamativo */
+.qr-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #00C9FF 0%, #92FE9D 100%);
+  padding: 20px;
+}
+
+/* Estilo del contenedor del QR */
+.qr-card {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Título llamativo */
+.qr-card h1 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+/* Contenedor del QR */
+.qr-code-container {
+  margin: 20px auto;
+}
+
+/* Descripción debajo del QR */
+.qr-description {
+  font-size: 18px;
+  color: #555;
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .qr-card {
+    padding: 30px;
+  }
+
+  .qr-card h1 {
+    font-size: 24px;
+  }
+
+  .qr-description {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .qr-card {
+    padding: 20px;
+  }
+
+  .qr-card h1 {
+    font-size: 22px;
+  }
+
+  .qr-description {
+    font-size: 14px;
+  }
+}
