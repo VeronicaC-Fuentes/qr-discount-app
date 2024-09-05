@@ -27,3 +27,4 @@ function QRPage() {
 }
 
 export default QRPage;
+
