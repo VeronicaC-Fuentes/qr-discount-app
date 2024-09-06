@@ -3,6 +3,8 @@ import { addDoc, collection, doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from './firebase';
 import { useSearchParams } from 'react-router-dom';
 import './App.css'; // Asegúrate de importar el archivo CSS
+import QRPROM from './assets/QRPROM.png';
+
 
 function Descuento() {
   const [formData, setFormData] = useState({ name: '', email: '' });
@@ -57,9 +59,17 @@ function Descuento() {
 
   return (
     <div className="mobile-container">
-      <div className="mobile-banner">
+      <div
+  className="mobile-banner"
+  style={{
+    backgroundImage: `url(${QRPROM})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    height: '250px',
+  }}
+>
         <h1>¡Descuento Exclusivo!</h1>
-        <p>Regístrate para obtener tu descuento especial.</p>
+        <p>Regístrate para obtener tu descuento especial</p>
       </div>
 
       <div id="form" className="mobile-form">
@@ -68,32 +78,34 @@ function Descuento() {
           <p className="counter">Personas registradas: {counter}</p>
 
           {success ? (
-            <div className="success-message">
-              <p>¡Gracias por registrarte! Tu código de descuento es: <strong>{discountCode}</strong></p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="form">
-              <input
-                type="text"
-                name="name"
-                placeholder="Ingresa tu nombre"
-                value={formData.name}
-                onChange={handleInputChange}
-                required
-                className="input-field"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Ingresa tu correo"
-                value={formData.email}
-                onChange={handleInputChange}
-                required
-                className="input-field"
-              />
-              <button type="submit" className="submit-button">Obtener Descuento</button>
-            </form>
-          )}
+  <div className="success-message">
+    <div className="success-icon">🎉</div> {/* Icono decorativo */}
+    <p>¡Gracias por registrarte! Tu código de descuento es:</p>
+    <strong>{discountCode}</strong> {/* Código de descuento en negrita */}
+  </div>
+) : (
+  <form onSubmit={handleSubmit} className="form">
+    <input
+      type="text"
+      name="name"
+      placeholder="Ingresa tu nombre"
+      value={formData.name}
+      onChange={handleInputChange}
+      required
+      className="input-field"
+    />
+    <input
+      type="email"
+      name="email"
+      placeholder="Ingresa tu correo"
+      value={formData.email}
+      onChange={handleInputChange}
+      required
+      className="input-field"
+    />
+    <button type="submit" className="submit-button">Obtener Descuento</button>
+  </form>
+)}
         </div>
       </div>
     </div>

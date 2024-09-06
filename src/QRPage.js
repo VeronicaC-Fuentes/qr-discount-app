@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import QRCode from 'react-qr-code';
 import './App.css'; // Asegúrate de importar el archivo CSS
+import BackgroundImage from './assets/test.jpg'; // Si tienes la imagen en 'assets'
 
 function QRPage() {
   const [generatedQR, setGeneratedQR] = useState('');
@@ -12,7 +13,7 @@ function QRPage() {
   }, []);
 
   return (
-    <div className="qr-container">
+    <div className="qr-container" style={{ backgroundImage: `url(${BackgroundImage})` }}>
       <div className="qr-card">
         <h1>¡Escanea para obtener tu descuento!</h1>
         {generatedQR && (
@@ -27,4 +28,3 @@ function QRPage() {
 }
 
 export default QRPage;
-

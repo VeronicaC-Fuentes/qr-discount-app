@@ -1,66 +1,80 @@
 /* Contenedor móvil */
-
-
 .mobile-container {
   background-color: #ffffff;
-  padding: 20px;
+  padding: 10px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
+/* Ajuste del banner */
 .mobile-banner {
-  background-image: url('/QPROMO.png');
-  background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
-  background-position: center; /* Centra la imagen */
-  height: 250px; /* Ajusta el alto del banner */
-}
-
-
-
-.mobile-banner h1 {
-  font-size: 26px;
-  color: #ff6b6b;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 10px;
 }
 
+/* Ajustes de texto del banner */
+.mobile-banner h1 {
+  font-size: 22px;
+  color: #ff6b6b;
+  margin-bottom: 5px;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra con desplazamiento y desenfoque */
+}
+
 .mobile-banner p {
-  font-size: 16px;
-  color: #555;
+  font-size: 14px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra con desplazamiento y desenfoque */
 }
 
 /* Estilos para la tarjeta del formulario */
 .form-card {
   background-color: #ffffff;
-  padding: 30px;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  margin: 20px 0;
+  margin: 0 auto;
+  max-width: 90%; /* Ajuste del ancho máximo para móviles */
+  width: 100%;
 }
 
+/* Ajustes de títulos del formulario */
 .form-card h2 {
-  font-size: 22px;
-  margin-bottom: 15px;
+  font-size: 20px;
+  margin-bottom: 10px;
   color: #333;
+  text-align: center;
 }
 
 .counter {
-  font-size: 14px;
+  font-size: 12px;
   color: #777;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 /* Estilos de formulario */
 .form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
 .input-field {
-  padding: 12px;
-  font-size: 16px;
+  padding: 10px;
+  font-size: 14px;
   border: 1px solid #ddd;
   border-radius: 8px;
   width: 100%;
@@ -73,8 +87,8 @@
 }
 
 .submit-button {
-  padding: 14px;
-  font-size: 16px;
+  padding: 12px;
+  font-size: 14px;
   background-color: #ff6b6b;
   color: white;
   border: none;
@@ -87,38 +101,150 @@
   background-color: #ff5a5a;
 }
 
-/* Mensaje de éxito */
+/* Mensaje de éxito mejorado */
 .success-message {
   font-size: 18px;
-  color: #4caf50;
-  background-color: #e8f5e9;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8a8a 100%); /* Degradado de tonos rosados */
   padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #4caf50;
+  border-radius: 12px;
+  border: 1px solid #ff6b6b; /* Borde acorde al degradado */
   text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; /* Espacio extra para separar el mensaje del formulario */
 }
 
+.success-message strong {
+  font-size: 22px;
+  color: #ffffff;
+  display: block;
+  margin-top: 10px;
+}
+
+.success-icon {
+  font-size: 40px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+
+/* Icono decorativo para el mensaje */
+.success-icon {
+  font-size: 40px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+
+/* Ajustes responsive */
 @media (max-width: 480px) {
   .mobile-banner h1 {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   .mobile-banner p {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .form-card {
-    padding: 20px;
+    padding: 15px;
+    max-width: 90%; /* Mantener el ancho máximo del 90% en pantallas pequeñas */
   }
 
   .input-field {
-    font-size: 14px;
-    padding: 10px;
+    font-size: 12px;
+    padding: 8px;
   }
 
   .submit-button {
-    font-size: 14px;
-    padding: 12px;
+    font-size: 12px;
+    padding: 10px;
   }
 }
 
+/* Contenedor del QR */
+.qr-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('./assets/test.jpg') no-repeat center center fixed; /* Fondo con imagen */
+  background-size: cover; /* Para cubrir todo el fondo */
+  padding: 20px;
+}
+
+/* Estilo del contenedor del QR */
+.qr-card {
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Título llamativo */
+.qr-card h1 {
+  font-size: 28px;
+  color: #ff6b6b; /* Mismo tono que en las otras páginas */
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+/* Contenedor del QR */
+.qr-code-container {
+  margin: 20px auto;
+}
+
+/* Descripción debajo del QR */
+.qr-description {
+  font-size: 18px;
+  color: #555;
+  margin-top: 20px;
+}
+
+/* Efectos en el botón */
+.qr-card button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.qr-card button:hover {
+  background-color: #ff5a5a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .qr-card {
+    padding: 30px;
+  }
+
+  .qr-card h1 {
+    font-size: 24px;
+  }
+
+  .qr-description {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .qr-card {
+    padding: 20px;
+  }
+
+  .qr-card h1 {
+    font-size: 22px;
+  }
+
+  .qr-description {
+    font-size: 14px;
+  }
+}
