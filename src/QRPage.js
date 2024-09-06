@@ -8,7 +8,7 @@ function QRPage() {
 
   useEffect(() => {
     const discountCode = `DISCOUNT-${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
-    const qrLink = `https://tuevento.netlify.app/descuento?code=${discountCode}`; 
+    const qrLink = `https://descuentox.netlify.app/descuento?code=${discountCode}`; 
     setGeneratedQR(qrLink);
   }, []);
 
