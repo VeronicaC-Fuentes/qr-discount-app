@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import QRPage from './QRPage';
 import Descuento from './Descuento';
-import QRPROM from './assets/QRPROM.png';
 
 
 function App() {
