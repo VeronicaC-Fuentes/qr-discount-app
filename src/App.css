@@ -1,4 +1,6 @@
 /* Contenedor móvil */
+
+
 .mobile-container {
   background-color: #ffffff;
   padding: 20px;
@@ -9,12 +11,13 @@
 }
 
 .mobile-banner {
-  text-align: center;
-  background-color: #f9f9f9;
-  padding: 40px 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-image: url('/QPROMO.png');
+  background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+  background-position: center; /* Centra la imagen */
+  height: 250px; /* Ajusta el alto del banner */
 }
+
+
 
 .mobile-banner h1 {
   font-size: 26px;
@@ -118,3 +121,4 @@
     padding: 12px;
   }
 }
+
