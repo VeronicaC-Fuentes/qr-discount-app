@@ -56,41 +56,54 @@ function Descuento() {
   };
 
   return (
-    <div className="descuento-container">
-      <div className="form-card">
-        <h1>Regístrate para obtener tu descuento</h1>
-        <p className="counter">Personas registradas: {counter}</p>
-        
-        {success ? (
-          <div className="success-message">
-            <p>¡Gracias por registrarte! Tu código de descuento es: <strong>{discountCode}</strong></p>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="form">
-            <input
-              type="text"
-              name="name"
-              placeholder="Ingresa tu nombre"
-              value={formData.name}
-              onChange={handleInputChange}
-              required
-              className="input-field"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Ingresa tu correo"
-              value={formData.email}
-              onChange={handleInputChange}
-              required
-              className="input-field"
-            />
-            <button type="submit" className="submit-button">Registrar y obtener descuento</button>
-          </form>
-        )}
+    <>
+      {/* Sección del banner */}
+      <div className="banner-container">
+        <div className="banner-content">
+          <h1>Discover The Secrets Of Beauty</h1>
+          <p>Get them together (for less!) for dewy, natural-looking coverage that still looks like skin.</p>
+          <a href="#form" className="banner-button">Shop Now</a>
+        </div>
       </div>
-    </div>
+
+      {/* Sección del formulario */}
+      <div id="form" className="descuento-container">
+        <div className="form-card">
+          <h2>Regístrate para obtener tu descuento</h2>
+          <p className="counter">Personas registradas: {counter}</p>
+
+          {success ? (
+            <div className="success-message">
+              <p>¡Gracias por registrarte! Tu código de descuento es: <strong>{discountCode}</strong></p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="form">
+              <input
+                type="text"
+                name="name"
+                placeholder="Ingresa tu nombre"
+                value={formData.name}
+                onChange={handleInputChange}
+                required
+                className="input-field"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Ingresa tu correo"
+                value={formData.email}
+                onChange={handleInputChange}
+                required
+                className="input-field"
+              />
+              <button type="submit" className="submit-button">Registrar y obtener descuento</button>
+            </form>
+          )}
+        </div>
+      </div>
+    </>
   );
 }
 
 export default Descuento;
+
