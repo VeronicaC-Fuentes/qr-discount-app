@@ -56,20 +56,15 @@ function Descuento() {
   };
 
   return (
-    <>
-      {/* Sección del banner */}
-      <div className="banner-container">
-        <div className="banner-content">
-          <h1>Discover The Secrets Of Beauty</h1>
-          <p>Get them together (for less!) for dewy, natural-looking coverage that still looks like skin.</p>
-          <a href="#form" className="banner-button">Shop Now</a>
-        </div>
+    <div className="mobile-container">
+      <div className="mobile-banner">
+        <h1>¡Descuento Exclusivo!</h1>
+        <p>Regístrate para obtener tu descuento especial.</p>
       </div>
 
-      {/* Sección del formulario */}
-      <div id="form" className="descuento-container">
+      <div id="form" className="mobile-form">
         <div className="form-card">
-          <h2>Regístrate para obtener tu descuento</h2>
+          <h2>Regístrate Ahora</h2>
           <p className="counter">Personas registradas: {counter}</p>
 
           {success ? (
@@ -96,12 +91,12 @@ function Descuento() {
                 required
                 className="input-field"
               />
-              <button type="submit" className="submit-button">Registrar y obtener descuento</button>
+              <button type="submit" className="submit-button">Obtener Descuento</button>
             </form>
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

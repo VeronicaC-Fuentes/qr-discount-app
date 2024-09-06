@@ -1,100 +1,120 @@
-/* Estilo para el banner */
-.banner-container {
-  background-image: url('/public/QRPROM.png'); /* URL de la imagen de fondo */
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
+/* Contenedor móvil */
+.mobile-container {
+  background-color: #ffffff;
+  padding: 20px;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mobile-banner {
   text-align: center;
-  color: white;
-  position: relative;
-}
-
-.banner-content h1 {
-  font-size: 60px;
-  margin-bottom: 20px;
-  color: #ff6b6b; /* Color de texto grande */
-}
-
-.banner-content p {
-  font-size: 20px;
-  margin-bottom: 30px;
-}
-
-.banner-button {
-  padding: 15px 30px;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 30px;
-  font-size: 18px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.banner-button:hover {
-  background-color: #ff6b6b;
-}
-
-/* Sección del formulario debajo del banner */
-.descuento-container {
   background-color: #f9f9f9;
-  padding: 50px 20px;
-  text-align: center;
-}
-
-.form-card {
-  background-color: white;
-  padding: 40px;
+  padding: 40px 20px;
   border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.form h2 {
-  font-size: 24px;
+.mobile-banner h1 {
+  font-size: 26px;
+  color: #ff6b6b;
+  margin-bottom: 10px;
+}
+
+.mobile-banner p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Estilos para la tarjeta del formulario */
+.form-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+.form-card h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.counter {
+  font-size: 14px;
+  color: #777;
   margin-bottom: 20px;
 }
 
-.form .input-field {
+/* Estilos de formulario */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-field {
   padding: 12px;
   font-size: 16px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  margin-bottom: 15px;
   width: 100%;
+  transition: border-color 0.3s ease;
 }
 
-.form .submit-button {
-  padding: 12px;
+.input-field:focus {
+  border-color: #ff6b6b;
+  outline: none;
+}
+
+.submit-button {
+  padding: 14px;
   font-size: 16px;
   background-color: #ff6b6b;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  width: 100%;
+  transition: background-color 0.3s ease;
 }
 
 .submit-button:hover {
   background-color: #ff5a5a;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .banner-content h1 {
-    font-size: 40px;
+/* Mensaje de éxito */
+.success-message {
+  font-size: 18px;
+  color: #4caf50;
+  background-color: #e8f5e9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #4caf50;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .mobile-banner h1 {
+    font-size: 22px;
   }
 
-  .banner-content p {
-    font-size: 16px;
+  .mobile-banner p {
+    font-size: 14px;
   }
 
-  .banner-button {
-    font-size: 16px;
-    padding: 10px 20px;
+  .form-card {
+    padding: 20px;
+  }
+
+  .input-field {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .submit-button {
+    font-size: 14px;
+    padding: 12px;
   }
 }
