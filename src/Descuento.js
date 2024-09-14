@@ -1,35 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { addDoc, collection, doc, getDoc, setDoc } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 import { db } from './firebase';
 import { useSearchParams } from 'react-router-dom';
-import './App.css'; // Asegúrate de importar el archivo CSS
-import QRPROM from './assets/QRPROM.png';
-
+import './App.css';
+import QRPROM from './assets/test.png';
+import { FaWhatsapp, FaInstagram } from 'react-icons/fa'; // Importamos íconos de WhatsApp e Instagram
 
 function Descuento() {
   const [formData, setFormData] = useState({ name: '', email: '' });
   const [discountCode, setDiscountCode] = useState('');
   const [success, setSuccess] = useState(false);
-  const [counter, setCounter] = useState(0);
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
     const discount = searchParams.get('code');
     setDiscountCode(discount);
   }, [searchParams]);
-
-  useEffect(() => {
-    const fetchCounter = async () => {
-      const docRef = doc(db, "metrics", "counter");
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        setCounter(docSnap.data().count);
-      } else {
-        await setDoc(docRef, { count: 0 });
-      }
-    };
-    fetchCounter();
-  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -42,15 +28,6 @@ function Descuento() {
 
     try {
       await addDoc(collection(db, "users"), userData);
-
-      const docRef = doc(db, "metrics", "counter");
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        const newCount = docSnap.data().count + 1;
-        await setDoc(docRef, { count: newCount });
-        setCounter(newCount);
-      }
-
       setSuccess(true);
     } catch (error) {
       console.error("Error al guardar en Firestore:", error);
@@ -60,52 +37,64 @@ function Descuento() {
   return (
     <div className="mobile-container">
       <div
-  className="mobile-banner"
-  style={{
-    backgroundImage: `url(${QRPROM})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    height: '250px',
-  }}
->
-        <h1>¡Descuento Exclusivo!</h1>
-        <p>Regístrate para obtener tu descuento especial</p>
+        className="mobile-banner"
+        style={{
+          backgroundImage: `url(${QRPROM})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          height: '400px',
+        }}
+      >
+        <div className="logo-container">
+          <img src="logo.png" alt="Logo" className="logo-img" />
+        </div>
+        <h1>Déjanos tus datos y obtén un bono de 200 soles en tu tratamiento con Kai.</h1>
+        <p style={{ fontSize: '12px', color: '#FFFFFF' }}>Aplica para tratamientos mayores a 850 soles.</p>
       </div>
 
       <div id="form" className="mobile-form">
         <div className="form-card">
-          <h2>Regístrate Ahora</h2>
-          <p className="counter">Personas registradas: {counter}</p>
+          <h2>Ingresa tus Datos</h2>
 
           {success ? (
-  <div className="success-message">
-    <div className="success-icon">🎉</div> {/* Icono decorativo */}
-    <p>¡Gracias por registrarte! Tu código de descuento es:</p>
-    <strong>{discountCode}</strong> {/* Código de descuento en negrita */}
-  </div>
-) : (
-  <form onSubmit={handleSubmit} className="form">
-    <input
-      type="text"
-      name="name"
-      placeholder="Ingresa tu nombre"
-      value={formData.name}
-      onChange={handleInputChange}
-      required
-      className="input-field"
-    />
-    <input
-      type="email"
-      name="email"
-      placeholder="Ingresa tu correo"
-      value={formData.email}
-      onChange={handleInputChange}
-      required
-      className="input-field"
-    />
-    <button type="submit" className="submit-button">Obtener Descuento</button>
-  </form>
-)}
+            <div className="success-message">
+              <p>¡Gracias por registrarte! Tu código de descuento es:</p>
+              <strong>{discountCode}</strong>
+
+              {/* Mostrar íconos solo después de enviar los datos */}
+              <div className="footer-icons">
+                <p>Comunícate con nosotros para agendar una cita y canjear tu bono:</p>
+                <a href="https://wa.me/51905448359" target="_blank" rel="noopener noreferrer">
+                  <FaWhatsapp /> +51 905 448 359
+                </a>
+                <a href="https://www.instagram.com/kaiestheticboutique/" target="_blank" rel="noopener noreferrer">
+                  <FaInstagram /> Instagram
+                </a>
+              </div>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="form">
+              <input
+                type="text"
+                name="name"
+                placeholder="Ingresa tu nombre"
+                value={formData.name}
+                onChange={handleInputChange}
+                required
+                className="input-field"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Ingresa tu correo"
+                value={formData.email}
+                onChange={handleInputChange}
+                required
+                className="input-field"
+              />
+              <button type="submit" className="submit-button">Obtener Bono</button>
+            </form>
+          )}
         </div>
       </div>
     </div>

@@ -1,11 +1,12 @@
 /* Contenedor móvil */
 .mobile-container {
-  background-color: #ffffff;
-  padding: 10px;
+  background-color: #F2D0D9;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 /* Ajuste del banner */
@@ -13,157 +14,185 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 200px;
+  height: 600px; /* Ajustamos el tamaño del banner */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; /* Centramos verticalmente */
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  padding: 80px 20px; /* Aumentamos el padding-top para centrar mejor el logo */
+  position: relative;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor del logo con fondo semi-transparente */
+.logo-container {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 15px;
+  border-radius: 15px; /* Aplicamos bordes redondeados solo al logo */
+  display: inline-block;
+  max-width: 80%; /* Ajustamos el ancho máximo */
+  margin-bottom: 25px; /* Añadimos más espacio debajo del logo */
+}
+
+/* Tamaño del logo */
+.logo-img {
+  width: 300px; /* Tamaño ajustado del logo */
+  height: auto;
 }
 
 /* Ajustes de texto del banner */
 .mobile-banner h1 {
-  font-size: 22px;
-  color: #ff6b6b;
-  margin-bottom: 5px;
-  text-align: center;
+  font-size: 24px; /* Ajustamos el tamaño de la fuente */
+  color: #ffffff;
+  margin-bottom: 10px;
   font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra con desplazamiento y desenfoque */
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+  max-width: 90%; /* Limita el ancho del texto para que no se desborde */
+  box-sizing: border-box;
+  padding: 15px; /* Añadimos padding para que tenga espacio suficiente */
+
 }
 
 .mobile-banner p {
-  font-size: 14px;
+  font-size: 16px; /* Ajustamos el tamaño del texto */
   color: #ffffff;
-  text-align: center;
-  font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra con desplazamiento y desenfoque */
+  margin-top: 5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  max-width: 90%; /* Limita el ancho del texto */
+  padding: 10px;
+  -webkit-text-stroke: 1px #383240; /* Borde morado oscuro */
+}
+
+/* Contenedor del formulario */
+.mobile-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
 /* Estilos para la tarjeta del formulario */
 .form-card {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  margin: 0 auto;
-  max-width: 90%; /* Ajuste del ancho máximo para móviles */
+  background-color: #CEC4F2;
+  padding: 40px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  max-width: 500px;
   width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 20px; /* Borde redondeado para la tarjeta del formulario */
 }
 
 /* Ajustes de títulos del formulario */
 .form-card h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #333;
-  text-align: center;
-}
-
-.counter {
-  font-size: 12px;
-  color: #777;
+  font-size: 24px;
   margin-bottom: 15px;
+  color: #383240;
   text-align: center;
+  font-weight: bold;
 }
 
 /* Estilos de formulario */
 .form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
+  justify-content: center; /* Centramos el contenido del formulario */
+  align-items: center;
 }
 
 /* Ajustes de los campos de entrada (inputs) */
 .input-field {
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  padding: 15px;
+  font-size: 16px;
+  border: 2px solid #383240;
+  border-radius: 12px;
   width: 100%;
-  max-width: 300px; /* Limitar el ancho máximo de los campos */
-  margin: 0 auto; /* Centrar los campos */
+  max-width: 400px;
   transition: border-color 0.3s ease;
 }
 
 .input-field:focus {
-  border-color: #ff6b6b;
+  border-color: #383240;
   outline: none;
 }
 
+/* Botón de envío */
 .submit-button {
-  padding: 12px;
-  font-size: 14px;
-  background-color: #ff6b6b;
-  color: white;
+  padding: 15px;
+  font-size: 16px;
+  background-color: #383240;
+  color: #F2D0D9;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
+  width: 200px;
   transition: background-color 0.3s ease;
 }
 
 .submit-button:hover {
-  background-color: #ff5a5a;
+  background-color: #CEC4F2;
 }
 
-/* Mensaje de éxito mejorado */
-.success-message {
-  font-size: 18px;
-  color: #ffffff;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ff8a8a 100%); /* Degradado de tonos rosados */
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid #ff6b6b; /* Borde acorde al degradado */
+/* Íconos de footer */
+.footer-icons {
+  margin-top: 20px;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  margin-top: 20px; /* Espacio extra para separar el mensaje del formulario */
 }
 
-.success-message strong {
-  font-size: 22px;
-  color: #ffffff;
+.footer-icons a {
   display: block;
-  margin-top: 10px;
+  margin: 10px 0;
+  color: #383240;
+  text-decoration: none;
+  font-size: 16px;
 }
 
-.success-icon {
-  font-size: 40px;
-  color: #ffffff;
+.footer-icons a:hover {
+  color: #A58DFF;
+}
+
+.footer-icons p {
   margin-bottom: 10px;
+  font-size: 14px;
+  color: #383240;
 }
-
-
-/* Icono decorativo para el mensaje */
-.success-icon {
-  font-size: 40px;
-  color: #ffffff;
-  margin-bottom: 10px;
-}
-
 
 /* Ajustes responsive */
 @media (max-width: 480px) {
+  .mobile-banner {
+    height: 450px; /* Ajustamos el tamaño del banner para móviles */
+    padding-bottom: 20px;
+  }
+
   .mobile-banner h1 {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   .mobile-banner p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .form-card {
-    padding: 15px;
-    max-width: 90%; /* Mantener el ancho máximo del 90% en pantallas pequeñas */
+    padding: 30px;
+    max-width: 90%;
   }
 
   .input-field {
-    font-size: 12px;
-    padding: 8px;
+    font-size: 14px;
+    padding: 12px;
   }
 
   .submit-button {
-    font-size: 12px;
-    padding: 10px;
+    font-size: 14px;
+    padding: 12px;
+    max-width: 250px;
   }
 }
+
 
 /* Contenedor del QR */
 .qr-container {
@@ -171,14 +200,14 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url('./assets/test.jpg') no-repeat center center fixed; /* Fondo con imagen */
-  background-size: cover; /* Para cubrir todo el fondo */
+  background: url('./assets/test.jpg') no-repeat center center fixed;
+  background-size: cover;
   padding: 20px;
 }
 
 /* Estilo del contenedor del QR */
 .qr-card {
-  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
@@ -190,7 +219,7 @@
 /* Título llamativo */
 .qr-card h1 {
   font-size: 28px;
-  color: #ff6b6b; /* Mismo tono que en las otras páginas */
+  color: #383240;
   margin-bottom: 30px;
   font-weight: bold;
 }
@@ -209,8 +238,8 @@
 
 /* Efectos en el botón */
 .qr-card button {
-  background-color: #ff6b6b;
-  color: white;
+  background-color: #383240;
+  color: #F2D0D9;
   border: none;
   border-radius: 8px;
   padding: 12px;
@@ -220,7 +249,7 @@
 }
 
 .qr-card button:hover {
-  background-color: #ff5a5a;
+  background-color: #CEC4F2;
 }
 
 /* Responsive */
